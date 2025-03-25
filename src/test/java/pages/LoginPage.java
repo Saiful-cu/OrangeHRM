@@ -1,10 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import utils.DriverManager;
-import utils.TestDataReader;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends BasePage {
     private final By usernameField = By.xpath("//input[@name='username']");
@@ -12,21 +9,27 @@ public class LoginPage extends BasePage {
     private final By logInButtonField = By.xpath("//button[contains(@class,'orangehrm-login-button')]");
     private final By forgetPasswordField = By.xpath("//p[contains(@class,'orangehrm-login-forgot-header')]");
 
-    public LoginPage(){
+    public LoginPage() {
         super(By.xpath("//div[contains(@class,'orangehrm-login-slot')]"));
-        this.driver = DriverManager.getDriver();
     }
 
-    public void setUserName(String usernames){
-        sendKeys(usernameField,usernames);
+    public void setUserName(String usernames) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(usernameField));
+        sendKeys(usernameField, usernames);
     }
-    public void setPassword(String passwords){
-        sendKeys(passwordField,passwords);
+
+    public void setPassword(String passwords) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(passwordField));
+        sendKeys(passwordField, passwords);
     }
-    public void clickOnLoginButton(){
-       click(logInButtonField);
+
+    public void clickOnLoginButton() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(logInButtonField));
+        click(logInButtonField);
     }
-    public void clickOnForgetPassword(){
-       click(forgetPasswordField);
+
+    public void clickOnForgetPassword() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(forgetPasswordField));
+        click(forgetPasswordField);
     }
 }

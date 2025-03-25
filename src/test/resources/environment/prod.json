@@ -1,4 +1,4 @@
 {
-  "host": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
-  "duration": 10
+  "host": "https://opensource-demo.orangehrmlive.com",
+  "wait": 10
 }

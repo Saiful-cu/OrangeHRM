@@ -6,6 +6,7 @@ import lombok.Getter;
 public enum PageNavigation {
     ADMIN_PAGE("Admin"),
     PIM_PAGE("PIM"),
+    LEAVE_PAGE("Leave"),
     TIME_PAGE("Time"),
     RECRUITMENT_PAGE("Recruitment"),
     MY_INFO_PAGE("My Info"),
@@ -17,7 +18,8 @@ public enum PageNavigation {
     BUZZ_PAGE("Buzz");
 
     private final String label;
-    PageNavigation(String label){
+
+    PageNavigation(String label) {
         this.label = label;
     }
 
